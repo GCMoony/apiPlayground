@@ -1,0 +1,51 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(239, 239, 239);
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
+p {
+    max-width: 70ch;
+    font-size: 1.2em;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+section {
+    box-shadow: 1px 1px 5px 3px black;
+    background-color: white;
+    max-width: 900px;
+    margin: 0 auto 20px;
+    padding: 10px;
+    display: grid;
+    place-items: center;
+}
+
+#canvas-holder {
+    /* position: relative; */
+    
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+canvas {
+}
+
+iframe {
+    /* margin: 0 auto;
+    height: 400px;
+    width: 80%; */
+    aspect-ratio: 16 / 9;
+    width: 90%;
+}
