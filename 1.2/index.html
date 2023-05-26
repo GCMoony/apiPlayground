@@ -4,12 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabular Data Fetching</title>
+    <title>FNV: Steam Stats</title>
     <script defer src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Let's try working with CSV files</h1>
-    <p>Here's some statistics about <em>Fallout New Vegas</em> play time since release on Steam, provided by <a href="https://steamcharts.com/">SteamCharts</a> </p>
+    <h1>Fallout New Vegas, But Steam Statistics</h1>
 
+    <section>
+        <h2>Steam Player Statistics for Fallout New Vegas</h2>
+        <p>
+            If you've never heard of <em>Fallout New Vegas</em>, check out this trailer:
+        </p>
+        <iframe src="https://www.youtube.com/embed/l-x-1fm2cq8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>
+            I really enjoyed this game, and I occasionally pick it up again, regardless of how many times I've played through. There's so much story to this game, I keep finding new things every playthough! I do recommend picking it up and playing it (if you're into video games).
+        </p>
+        <h2>Fallout New Vegas: Average Player Count and Peak Player Count per Month</h2>
+        <!-- <div id="canvas-holder"> -->
+            <canvas id="statChart"></canvas>
+        <!-- </div> -->
+        <h3>What happened in June 2015?</h3>
+        <p>
+            I'm not entirely sure, but I did a <em>little</em> bit of digging on Google to see what may have caused the spike:
+        </p>
+        <ul>
+            <li><a href="https://en.wikipedia.org/wiki/Bethesda_Softworks#2010s" target="_blank">Release of Fallout Shelter in summer of 2015</a></li>
+            <li><a href="https://kotaku.com/fallout-new-vegas-beaten-in-24-minutes-a-new-world-re-1709378669" target="_blank">A speedrun of Fallout New Vegas, completed in 24 minutes</a></li>
+            
+        </ul>
+    </section>
 </body>
 </html>
