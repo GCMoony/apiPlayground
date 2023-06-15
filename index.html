@@ -4,44 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Playground</title>
+    <title>News Search API</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
     <header>
-        <nav></nav>
+        <h1>News Searcher</h1>
     </header>
 
-    <h1>Welcome to API Playground!</h1>
-    <aside>
-        <h2>Contents</h2>
-        <ul>
-            <li><a href="#1.1">Project 1.1</a></li>
-            <li><a href="#1.2">Project 1.2</a></li>
-        </ul>
-    </aside>
     <main>
-        <section id="1.1">
-            <h2>Fetching Local Files</h2>
-            <hr>
-            <a target="_blank" href="./1.1/index.html">Link</a>
-            <p>
-                Here, I practice fetching local files, such as images and text.
-            </p>
+        <section id="">
+            <form action="" method="get">
+                <label for="search">
+                    <input type="text" placeholder="What does a fox say?" id="search">
+                </label>
+                
+            </form>
+            <button id="submit-button">Search Stories</button>
+            <div id="card-holder">Nothing here yet...</div>
         </section>
-
-        <section id="1.2">
-            <h2>Working with Local Data</h2>
-            <hr>
-            <a target="_blank" href="./1.2/index.html">Link</a>
-            <p>
-                Here, I fetch data from a local file, parse the data, then use <a href="https://www.chartjs.org/" target="_blank">Chart.js</a> to graph the data.
-            </p>
-        </section>
-        
     </main>
-
-    <footer>
-
-    </footer>
 </body>
 </html>

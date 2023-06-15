@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: grey;
+}
+
+#card-holder {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+    
+}
+
+.preview {
+    background-color: white;
+    /* border: solid black 2px; */
+    padding: 1em;
+    box-shadow: 5px 3px 3px 2px black;
+    border-radius: 5px;
+    grid-area: 2fr;
+}
+
+.preview > img {
+    max-width: 400px;
+    aspect-ratio: 16 / 9;
+    display: block;
+    margin: 0 auto;
+}
+
+.preview > a {
+    color: black;
+    text-decoration: none;
+}
+
+.preview > a:hover {
+    color: dodgerblue;
+}
