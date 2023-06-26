@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+
+}
+
+body, html {
+    margin: 0;
+    
+}
+
+body { 
+    background: linear-gradient(black 80%, blue) no-repeat;
+    min-height: 100dvh;
+    color: white;
+    padding: 1em;
+}

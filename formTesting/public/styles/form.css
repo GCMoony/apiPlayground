@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+body {
+    background-color: #3F3F37;
+    color: white;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+    text-align: center;
+}
+
+@media screen and (width > 800px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        text-align: left;
+    }
+}
+
+*:not(h1, h2, h3, h4, h5, h6) {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+p {
+    line-height: 2;
+}
+
+
+.grid-item, form, #form-container, .banner, form > input, button {
+    padding: 1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#form-container {
+    background-color: #878472;
+    color: white;
+}
+
+form > button {
+    background-color: #D6D6B1;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#form-container, .banner, form > * {
+    border-radius: 5px;
+}
+
+#form-container, form > * {
+    
+    border: none;
+}
+
+form > input {
+    color: white;
+    background-color: #3F3F37;
+}
+
+form > input:focus {
+    background-color: white;
+    color: black;
+}
+
+form > ::placeholder {
+    color: rgb(182, 182, 182);
+}
+
+.bold-text {
+    font-weight: 700;
+}
+
+
+.banner {
+    
+    margin-bottom: 20px;
+    background-color: #494331;
+    color: white;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.w-80 {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#form-container a {
+    text-decoration: none;
+    color: #DE541E;
+    
+}

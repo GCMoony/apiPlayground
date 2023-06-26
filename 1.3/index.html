@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps and JSON</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Leaflet Dependancies -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+
+</head>
+<body>
+    <header>
+        <h1>Working with JSON and Leaflet</h1>
+        <p>Let's plot the ISS on a map with Leaflet... in real time!</p>
+    </header>
+
+    <div id="map">
+
+    </div>
+
+    <div>
+        <h3>Current position</h3>
+        <p>
+            Latitude: <strong><span id="lat"></span></strong><br>
+            Longitude: <strong><span id="lon"></span></strong><br>
+            Updating in <span id="timer"></span> seconds...
+        </p>
+    </div>
+</body>
+</html>

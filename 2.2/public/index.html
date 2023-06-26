@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoLocation API</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <h1>Let's play with the GeoLocation API!</h1>
+    <p>You may find the API documentation <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API">here</a></p>
+
+    <h2>You <span id="eligible">can</span> run this API!</h2>
+
+    <script defer>
+
+        let eligible = document.getElementById("eligible");
+        let canUse = false;
+        eligible.innerText = "can't";
+        if ("geolocation" in navigator) {
+            eligible.innerText = "can";
+            canUse = true;
+        }
+
+        function sendData() {
+            if(canUse) {
+                sendDataHelper();
+            }
+        }
+
+        function sendDataHelper() {
+            /*
+                This is where we get the client's location via the API and
+                save them to a variable / display on webpage
+            */
+            navigator.geolocation.getCurrentPosition(async (position) => {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;    
+                const currTime = new Date(Date.now());
+                document.getElementById("lat").textContent = lat;
+                document.getElementById("lon").textContent = lon;
+                document.getElementById("time").textContent = currTime;
+
+                /*
+                    After we have our variables, we want to store them as a JSON
+                    object.
+                */
+               
+               const data = {lat, lon, currTime};
+            //    console.log(data);
+
+               /*
+                    This is how we setup our POST request.
+                    - Configure the fetch options in the 'options' variable
+                        - Like what fetch method (GET, POST...)
+                        - Header info (Our content will be json)
+                        - What the body of our data will contain
+                            - We turn our data into JSON strings
+               */
+                const options = {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+               };
+
+               /*
+                    Here, we fetch to a certain route, with the options we
+                    configured earlier. We can see if our data was successfully
+                    received 
+               */
+               const res = await fetch('/poop', options);
+               const returnData = await res.json();
+               console.log("Got the following information POSTed:\n", returnData);
+            });
+
+        
+        }
+        
+
+        // async function sendStuff(someStuff) {
+        //     const data = {lat, lon};
+        //     const options = {
+        //     method: 'POST',
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify(data),
+        //     };
+
+        //     const res = await fetch('/poop', options);
+        //     const returnData = await res.json();
+        //     console.log("Got the following information POSTed:\n", returnData);
+        // }
+    </script>
+
+    <h3>So... where are you?</h3>
+    <div>
+        <p>Latitude: <span id="lat">?</span>&deg;</p>
+        <p>Longitude: <span id="lon">?</span>&deg;</p>
+        <p>Time Submitted: <span id="time">?</span></p>
+        <button onclick="sendData()">Get your position!</button>
+    </div>
+
+    <!-- <form method="post">
+        <div>
+            <label for="someText">Text</label>
+            <input type="text" id="someText" placeholder="Tell me something...">
+        </div>
+        <button type="submit">Submit</button>
+    </form> -->
+</body>
+</html>
