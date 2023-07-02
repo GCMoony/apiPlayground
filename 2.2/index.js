@@ -36,7 +36,7 @@ let saveData = [];
 const database = new Datastore('database.db');
 database.loadDatabase();
 database.insert({
-    name: 'poop',
+    name: 'test',
     status: 'ok',
 });
 
@@ -44,9 +44,9 @@ database.insert({
 
 /**
  * This is how we will send data from the client to the server
- * using the POST method. We will POST to the route 'poop'
+ * using the POST method. We will POST to the route 'api'
  */
-app.post('/poop', (req, res) => {
+app.post('/api', (req, res) => {
     /**
      * 'req' will hold the information sent from the client
      * 'res' is what the client receives from the server
@@ -78,7 +78,7 @@ app.post('/poop', (req, res) => {
     
 })
 
-// Let's try saving the data to a file named "poop.txt"
+// Let's try saving the data to a file named "test.txt"
 async function saveToFile() {
     // Requiring the FileSystem (Promises)
     
@@ -90,7 +90,7 @@ async function saveToFile() {
      * - Close the file after writing to it
      */
     try {
-        fh = await fs.open("./poop.txt", 'a+');
+        fh = await fs.open("./test.txt", 'a+');
         // fh.write(JSON.stringify(saveData[saveData.length - 1]) + "\n")
         fh.write(`${saveData[saveData.length - 1].currTime} \n`)
     } finally {

@@ -1,9 +1,9 @@
-async function postData() {
+async function postData(fname, lname, email, pass) {
     const data = {
-        firstname: document.querySelector("#firstname").value,
-        lastname: document.querySelector("#lastname").value,
-        email: document.querySelector("#email").value,
-        password: document.querySelector("#password").value,
+        firstname: fname.value,
+        lastname: lname.value,
+        email: email.value,
+        password: pass.value,
     };
     const options = {
         method: 'POST',
@@ -16,6 +16,24 @@ async function postData() {
     let serverResponse = fetch("/api", options);
     const resJson = await serverResponse.json();
     console.log(resJson);
+}
+
+const submitButton = document.querySelector("#submit");
+submitButton.addEventListener("click", checkValidForm);
+
+
+function checkValidForm() {
+    const fname = document.querySelector("#firstname");
+    const lname = document.querySelector("#lastname");
+    const email = document.querySelector("#email");
+    const password = document.querySelector("#password");
+    // console.log(password.validity.valid);
+    if( fname.validity.valid && 
+        lname.validity.valid &&
+        email.validity.valid &&
+        password.validity.valid ) {
+        postData(fname, lname, email, password);
+    }
 }
 
 // const submitButton = document.querySelector("#submit");

@@ -70,7 +70,7 @@
                     configured earlier. We can see if our data was successfully
                     received 
                */
-               const res = await fetch('/poop', options);
+               const res = await fetch('/api', options);
                const returnData = await res.json();
                console.log("Got the following information POSTed:\n", returnData);
             });

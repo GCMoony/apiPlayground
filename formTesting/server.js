@@ -27,7 +27,9 @@ app.post("/api", (req, res) => {
     // Inserting a new user to the database
     database.insert(req.body);
 
-    res.json({
-        status: `Hi ${req.body.first}, your account has been created!`
-    })
+    // res.json({
+    //     status: `Hi ${req.body.first}, your account has been created!`
+    // })
+    
+    
 });

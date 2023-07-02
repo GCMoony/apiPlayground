@@ -29,18 +29,18 @@
                 </p>
             </div>
             <div id="form-container">
-                <form>
+                <form action="/summary" method="post">
                     <label for="firstname" hidden aria-label="First Name">First Name</label>
-                    <input id="firstname" type="text"  placeholder="First Name"/>
+                    <input id="firstname" type="text" required placeholder="First Name"/>
                     <br>
                     <label for="lastname" hidden aria-label="Last Name">Last Name</label>
-                    <input id="lastname" type="text"  placeholder="Last Name"/>
+                    <input id="lastname" type="text" required placeholder="Last Name"/>
                     <br>
                     <label for="email" hidden aria-label="email">Email</label>
                     <input id="email" type="email" required placeholder="Email"/>
                     <br>
                     <label for="password" hidden aria-label="password">Password</label>
-                    <input id="password" type="password"  placeholder="Password"/>
+                    <input id="password" type="password" required minlength="8" placeholder="Password"/>
                     <br>
                     <button id="submit" type="submit" class="bold-text">Claim your free trial</button>
                 </form>
